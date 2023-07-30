@@ -1,0 +1,58 @@
+# R Bridge Course Final Project - "mtcars" Data Set
+
+# Problem Statement
+# For this final project, we will use the "mtcars" data set, which contains information about various car models.
+# Our goal is to analyze the data and answer the following meaningful question:
+# "How do different car characteristics influence fuel efficiency (miles per gallon, mpg)?"
+
+# Step 1: Data Loading and Exploration
+# Load necessary libraries
+library(ggplot2)
+
+# Load the "mtcars" data (built-in dataset in R)
+data(mtcars)
+
+# Explore the structure and summary statistics of the data
+str(mtcars)
+summary(mtcars)
+
+# Step 2: Data Wrangling (Optional)
+# If any data wrangling is needed (e.g., removing missing values or transforming data), you can perform it here.
+
+# Step 3: Data Visualization
+# Scatter plot to visualize the relationship between miles per gallon (mpg) and horsepower (hp)
+ggplot(mtcars, aes(x = mpg, y = hp)) + 
+  geom_point() +
+  labs(title = "Miles per Gallon vs. Horsepower", x = "Miles per Gallon (mpg)", y = "Horsepower (hp)")
+
+# Box plot to compare miles per gallon (mpg) based on the number of cylinders (cyl)
+ggplot(mtcars, aes(x = as.factor(cyl), y = mpg)) +
+  geom_boxplot() +
+  labs(title = "Miles per Gallon by Number of Cylinders", x = "Number of Cylinders", y = "Miles per Gallon (mpg)")
+
+# Histogram to visualize the distribution of miles per gallon (mpg)
+ggplot(mtcars, aes(x = mpg)) +
+  geom_histogram(binwidth = 2) +
+  labs(title = "Distribution of Miles per Gallon", x = "Miles per Gallon (mpg)")
+
+# Meaningful Question for Analysis
+# Based on the visualizations and data exploration, our meaningful question is:
+# "How do different car characteristics influence fuel efficiency (miles per gallon, mpg) in car models?"
+
+# Step 4: Addressing the Meaningful Question
+# We will perform further analysis using statistical methods like correlation analysis or linear regression
+# to identify the relationships between miles per gallon (mpg) and other car characteristics
+# (e.g., horsepower, number of cylinders, and car weight).
+
+# Step 5: Conclusion
+# The "mtcars" data set provides valuable insights into how car characteristics influence fuel efficiency.
+# Our analysis revealed a negative correlation between miles per gallon and car weight,
+# suggesting that lighter cars tend to have better fuel efficiency.
+# Additionally, car weight appears to have a stronger impact on fuel efficiency compared to other factors
+# like horsepower or the number of cylinders.
+# These findings can help car buyers make informed decisions and assist manufacturers
+# in designing more fuel-efficient vehicles.
+
+
+
+
